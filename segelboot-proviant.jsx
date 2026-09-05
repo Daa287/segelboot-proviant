@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <meta name="theme-color" content="#0d2040"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="Proviant"/>
-  <title>⚓ Segelboot Proviant</title>
-  <link rel="manifest" href="manifest.json"/>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;overscroll-behavior:none;}
-    ::-webkit-scrollbar{width:4px;height:4px;}
-    ::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3);border-radius:2px;}
-    input[type=number]::-webkit-inner-spin-button{opacity:.5;}
-    select option{background:#0d2040;color:#e8dcc8;}
-    @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
-    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-    @keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(-10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
-    @keyframes scanline{0%{top:0}100%{top:100%}}
-    @media print{.no-print{display:none!important;}body{background:white!important;}}
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel">
-    const { useState, useMemo, useRef, useEffect, useCallback, createContext, useContext } = React;
-
 import { useState, useMemo, useRef, useEffect, useCallback, createContext, useContext } from "react";
 
 const VERSION = "5.3";
@@ -297,7 +263,7 @@ const useApp  = () => useContext(AppCtx);
 /* ═══════════════════════════════════════════════════════════════
    APP
 ══════════════════════════════════════════════════════════════════ */
-function App() {
+export default function App() {
   const mobile = useBreakpoint();
 
   /* ─ State ─ */
@@ -1660,10 +1626,3 @@ function FSelect({value,onChange,options,isObj,C}){ return <select value={value}
 function EBtn({emoji,label,desc,onClick,gold,C}){ return <button onClick={onClick} style={{background:gold?`rgba(201,168,76,.07)`:C.card,border:`1px solid ${gold?C.border:C.border}`,borderRadius:10,padding:"10px 13px",cursor:"pointer",display:"flex",alignItems:"center",gap:11,textAlign:"left",width:"100%"}}><span style={{fontSize:20}}>{emoji}</span><div><div style={{color:gold?C.goldL:C.text,fontSize:13,fontWeight:"bold"}}>{label}</div><div style={{color:C.muted,fontSize:11,marginTop:1}}>{desc}</div></div></button>; }
 function iBtn(){ return {background:"none",border:"none",cursor:"pointer",fontSize:16,padding:"5px 7px",borderRadius:7,opacity:.6}; }
 function cBtn(C){ return {background:"rgba(128,128,128,.1)",border:`1px solid ${C.border}`,borderRadius:7,width:28,height:28,cursor:"pointer",fontWeight:"bold",fontSize:16,display:"flex",alignItems:"center",justifyContent:"center"}; }
-
-
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(<App/>);
-  </script>
-</body>
-</html>
