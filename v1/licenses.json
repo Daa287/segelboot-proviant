@@ -1,0 +1,14 @@
+{
+  "licenses": [
+    {
+      "hash": "1aae889a98d6fd3c39931eb061816af35d4da675c319e73f86b71929e3df38a3",
+      "active": true,
+      "note": "Test-Key 5MG-PRO-XLXD-B7PE-BQEQ-GGZ4 (mit Bindestrichen gehasht)"
+    },
+    {
+      "hash": "1822516f531991a48ddb4904b7a0eac8d094c751da3a73bb731037aad9256002",
+      "active": true,
+      "note": "Test-Key 5MG-PRO-XLXD-B7PE-BQEQ-GGZ4 (ohne Bindestriche gehasht)"
+    }
+  ]
+}
